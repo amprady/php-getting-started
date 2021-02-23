@@ -27,4 +27,9 @@ $app->get('/w2c', function() use($app) {
   return $app['twig']->render('w2c.twig');
 });
 
+$app->get('/chat', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('chat.twig');
+});
+
 $app->run();
