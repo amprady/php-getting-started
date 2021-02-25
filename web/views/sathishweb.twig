@@ -1,62 +1,91 @@
 <style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #F40000;
-		font-family: "Comic Sans MS", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #F40000;
-	}
+    .embeddedServiceHelpButton .helpButton .uiButton {
+        background-color: #005290;
+        font-family: "Arial", sans-serif;
+    }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus {
+        outline: 1px solid #005290;
+    }
 </style>
+
+ 
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; //Or false
+        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-		//embedded_svc.settings.defaultMinimizedText = 'Contact us for more Details...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = 'Create a Case...'; //(Defaults to Agent Offline)
+ 	//embedded_svc.settings.widgetWidth = "..." //Set the width
+	//embedded_svc.settings.widgetHeight = "..." //Set the height
+	//embedded_svc.settings.widgetFontSize = "..." //Set the font size
+	//embedded_svc.settings.storageDomain = "..." //Set a Domain...
+	//embedded_svc.settings.language = en_US //Set the Language...
+	//embedded_svc.settings.language = ".."	//Set the Language...
+	//embedded_svc.settings.prechatBackgroundImgURL = "..." //Pre-Chat Banner...  We recommend an image that’s 320x100 pixels.
+	//embedded_svc.settings.smallCompanyLogoImgURL = "..."  //Logo for Header and Minimized Chat... We recommend a logo that’s 36x36 pixels.
+	//embedded_svc.settings.waitingStateBackgroundImgURL = "..." //Waiting State... We recommend an image that’s 250x60 pixels.
+	//embedded_svc.settings.avatarImgURL = "..." //Agent Avatar... We recommend an image size that’s 40x40 pixels.
+	//embedded_svc.settings.chatbotAvatarImgURL = “...” //Einstein Bots Avatar... We recommend an image size that’s 40x40 pixels.
+	//embedded_svc.settings.displayHelpButton = "..."//Display the Default Chat Button...
+	//embedded_svc.settings.defaultMinimizedText = "..." //Online text....
+	//embedded_svc.settings.disabledMinimizedText = "..." //Offline text....
+	//embedded_svc.settings.offlineSupportMinimizedText = “...” //Offline support text...
+	//embedded_svc.settings.loadingText = "..." //Loading text...
 
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+ 
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+        //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+        //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
-		embedded_svc.init(
-			'https://techmahindra187-dev-ed.my.salesforce.com',
-			'https://sathishwebchat-developer-edition.ap24.force.com',
-			gslbBaseURL,
-			'00D5g000004P1g3',
-			'ESD1',
-			{
-				baseLiveAgentContentURL: 'https://c.la2-c1-ukb.salesforceliveagent.com/content',
-				deploymentId: '5725g000000ChdF',
-				buttonId: '5735g000000CjsK',
-				baseLiveAgentURL: 'https://d.la2-c1-ukb.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5g0000004HuwEAE_177ce935ae3',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
+ 
 
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://techmahindra187-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
+        // Settings for Chat
+        //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+            // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+            // Returns a valid button ID.
+        //};
+        //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+        //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+        //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+ 
+
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
+
+ 
+
+        embedded_svc.init(
+            'https://techmahindra187-dev-ed.my.salesforce.com',
+            'https://sathishwebchat-developer-edition.ap24.force.com',
+            gslbBaseURL,
+            '00D5g000004P1g3',
+            'ESD1',
+            {
+                baseLiveAgentContentURL: 'https://c.la2-c1-ukb.salesforceliveagent.com/content',
+                deploymentId: '5725g000000ChdF',
+                buttonId: '5735g000000CjsK',
+                baseLiveAgentURL: 'https://d.la2-c1-ukb.salesforceliveagent.com/chat',
+                eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I5g0000004HuwEAE_177ce935ae3',
+                isOfflineSupportEnabled: true
+            }
+        );
+    };
+
+ 
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://techmahindra187-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
 </script>
