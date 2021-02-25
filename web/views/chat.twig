@@ -56,7 +56,7 @@
 		//Sets the auto-population of pre-chat form fields
 		embedded_svc.settings.prepopulatedPrechatFields = {
 			FirstName: document.getElementById('fname').value,
-			LastName: document.getElementById('lname').value,
+			LastName: "asdasd", //document.getElementById('lname').value,
 			Email: document.getElementById('email').value
 		}; 
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
@@ -108,6 +108,8 @@
 			}
 		);
 	};
+	
+	alert(document.getElementById('fname').value);
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
