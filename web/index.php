@@ -37,4 +37,9 @@ $app->get('/sathishweb', function() use($app) {
   return $app['twig']->render('sathishweb.twig');
 });
 
+$app->get('/invite', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('invite.twig');
+});
+
 $app->run();
