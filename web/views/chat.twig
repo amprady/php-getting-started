@@ -65,7 +65,7 @@
 		//Sets the auto-population of pre-chat form fields
 		embedded_svc.settings.prepopulatedPrechatFields = {
 			FirstName: getParameterByName('fname'), //document.getElementById('fname').value,
-			LastName: "asdasd", //document.getElementById('lname').value,
+			LastName: getParameterByName('lname'), //document.getElementById('lname').value,
 			Email: getParameterByName('email') //document.getElementById('email').value
 		}; 
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
@@ -86,15 +86,15 @@
 		  "transcriptFields": ["RecordTypeId"]
 		},{
 		  "label":"PAI",
-		  "value": document.getElementById('pai').value,
+		  "value": getParameterByName('pai'), //document.getElementById('pai').value,
 		  "transcriptFields": ["Prechat_PAI__c"]
 		},{
 		  "label":"Order Number",
-		  "value": document.getElementById('ordernumber').value,
+		  "value": getParameterByName('ordernumber'), //document.getElementById('ordernumber').value,
 		  "transcriptFields": ["Prechat_OrderNumber__c"]
 		},{
 		  "label":"ISR Region",
-		  "value": document.getElementById('region').value,
+		  "value": getParameterByName('region'), //document.getElementById('region').value,
 		  "transcriptFields": ["Prechat_Region__c"]
 		}];
 
