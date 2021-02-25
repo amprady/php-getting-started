@@ -13,7 +13,7 @@
 
 <h2>HTML Forms</h2>
 
-
+<form action="/" method="GET">
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname" ><br>
   
@@ -33,10 +33,19 @@
   <input type="text" id="pai" name="pai" ><br>
   
   <input type="submit" value="Submit" onclick="javascript:alert(document.getElementById('fname').value);">
-
+</form>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	function getParameterByName(name, url = window.location.href) {
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -55,9 +64,9 @@
 		
 		//Sets the auto-population of pre-chat form fields
 		embedded_svc.settings.prepopulatedPrechatFields = {
-			FirstName: document.getElementById('fname').value,
+			FirstName: getParameterByName('fname'), //document.getElementById('fname').value,
 			LastName: "asdasd", //document.getElementById('lname').value,
-			Email: document.getElementById('email').value
+			Email: getParameterByName('email') //document.getElementById('email').value
 		}; 
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
