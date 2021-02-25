@@ -1,4 +1,5 @@
 <html>
+
 <body>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
@@ -9,6 +10,30 @@
 		outline: 1px solid #005290;
 	}
 </style>
+
+<h2>HTML Forms</h2>
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" ><br>
+  
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" ><br><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" ><br>
+  
+  <label for="region">Region: (SA/SB)</label><br>
+  <input type="text" id="region" name="region" ><br><br>
+  
+  <label for="ordernumber">Order Number:</label><br>
+  <input type="text" id="ordernumber" name="ordernumber" ><br>
+  
+  <label for="pai">PAI:</label><br>
+  <input type="text" id="pai" name="pai" ><br>
+  
+  <input type="submit" value="Submit" onclick="prepopulate();">
+</form> 
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -27,7 +52,13 @@
 			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
 			// Returns a valid button ID.
 		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		
+		//Sets the auto-population of pre-chat form fields
+		embedded_svc.settings.prepopulatedPrechatFields = {
+			FirstName: document.getElementById('fname'),
+			LastName: document.getElementById('lname'),
+			Email: document.getElementById('email')
+		}; 
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		
