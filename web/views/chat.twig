@@ -55,9 +55,9 @@
 		
 		//Sets the auto-population of pre-chat form fields
 		embedded_svc.settings.prepopulatedPrechatFields = {
-			FirstName: document.getElementById('fname').value(),
-			LastName: document.getElementById('lname').value(),
-			Email: document.getElementById('email').value()
+			FirstName: document.getElementById('fname').value,
+			LastName: document.getElementById('lname').value,
+			Email: document.getElementById('email').value
 		}; 
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
@@ -77,15 +77,15 @@
 		  "transcriptFields": ["RecordTypeId"]
 		},{
 		  "label":"PAI",
-		  "value": document.getElementById('pai').value(),
+		  "value": document.getElementById('pai').value,
 		  "transcriptFields": ["Prechat_PAI__c"]
 		},{
 		  "label":"Order Number",
-		  "value": document.getElementById('ordernumber').value(),
+		  "value": document.getElementById('ordernumber').value,
 		  "transcriptFields": ["Prechat_OrderNumber__c"]
 		},{
 		  "label":"ISR Region",
-		  "value": document.getElementById('region').value(),
+		  "value": document.getElementById('region').value,
 		  "transcriptFields": ["Prechat_Region__c"]
 		}];
 
