@@ -42,4 +42,9 @@ $app->get('/invite', function() use($app) {
   return $app['twig']->render('invite.twig');
 });
 
+$app->get('/sd', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('sd.twig');
+});
+
 $app->run();
