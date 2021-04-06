@@ -38,23 +38,39 @@
 		
 		embedded_svc.settings.extraPrechatFormDetails = [{
 		  "label":"First Name",  
-		  "transcriptFields": ["OnePort_FName__c"]
+		  "transcriptFields": ["Prechat_First_Name__c"]
 		},{
-		  "label":"UserId", 
+		  "label":"User Id", 
 		  "value": "pafs@chevron.com", 
 		  "transcriptFields": ["OnePort_UserId__c"]
 		},{
+		  "label":"URL",
+		  "value": "https://oneport.com/asda/asdasd", //getParameterByName('pai'), //document.getElementById('pai').value,
+		  "transcriptFields": ["Prechat_URL__c"]
+		},{
+		  "label":"Oneport Transaction Status",
+		  "value": "Open", //getParameterByName('pai'), //document.getElementById('pai').value,
+		  "transcriptFields": ["Prechat_Oneport_Txn_Status__c"]
+		},{
+		  "label":"Oneport Transaction Volume",
+		  "value": 123123.12, //getParameterByName('pai'), //document.getElementById('pai').value,
+		  "transcriptFields": ["Prechat_Oneport_Txn_Volume__c	"]
+		},{
 		  "label":"PAI",
 		  "value": "0198393", //getParameterByName('pai'), //document.getElementById('pai').value,
-		  "transcriptFields": ["OnePort_PAI__c"]
+		  "transcriptFields": ["Prechat_Oneport_PAI__c"]
 		},{
 		  "label":"Order Number",
 		  "value": "345345345345", //getParameterByName('ordernumber'), //document.getElementById('ordernumber').value,
-		  "transcriptFields": ["OnePort_OrderNumber__c"]
+		  "transcriptFields": ["Prechat_Oneport_OrderNumber__c"]
 		},{
-		  "label":"Customer Region",
+		  "label":"Invoice Number",
+		  "value": "12341231", //getParameterByName('ordernumber'), //document.getElementById('ordernumber').value,
+		  "transcriptFields": ["Prechat_Oneport_InvoiceNumber__c"]
+		},{
+		  "label":"Customer Group",
 		  "value": "SK", //getParameterByName('region'), //document.getElementById('region').value,
-		  "transcriptFields": ["OnePort_CustomerRegion__c"]
+		  "transcriptFields": ["Prechat_Oneport_CustomerGroup__c"]
 		}];
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
