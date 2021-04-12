@@ -49,7 +49,7 @@ $app->get('/sd', function() use($app) {
 
 $app->get('/sd2', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('sd.twig');
+  return $app['twig']->render('sd2.twig');
 });
 
 $app->run();
