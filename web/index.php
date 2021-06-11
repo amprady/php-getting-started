@@ -52,4 +52,9 @@ $app->get('/sd2', function() use($app) {
   return $app['twig']->render('sd2.twig');
 });
 
+$app->get('/dsdev', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('dsdev.twig');
+});
+
 $app->run();
