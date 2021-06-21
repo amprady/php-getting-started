@@ -57,4 +57,9 @@ $app->get('/dsdev', function() use($app) {
   return $app['twig']->render('dsdev.twig');
 });
 
+$app->get('/dsqa', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('dsqa.twig');
+});
+
 $app->run();
